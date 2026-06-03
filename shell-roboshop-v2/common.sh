@@ -84,12 +84,12 @@ app_restart(){
 }
 
 java_setup(){
-     dnf install maven -y &>>$LOGS_FILE
-     VALIDATE $? "Installing Maven"
+    dnf install maven -y &>>$LOGS_FILE
+    VALIDATE $? "Installing Maven"
 
-     mvn clean package  &>>$LOGS_FILE
-     mv target/shipping-1.0.jar shipping.jar 
-     VALIDATE $? "Installing dependencies"
+    mvn clean package  &>>$LOGS_FILE
+    mv target/shipping-1.0.jar shipping.jar 
+    VALIDATE $? "Installing dependencies"
 }
 
 python_setup(){
@@ -98,4 +98,4 @@ python_setup(){
     
     pip3 install -r requirements.txt  &>>$LOGS_FILE
     VALIDATE $? "Installing dependencies"
-} 
+}
